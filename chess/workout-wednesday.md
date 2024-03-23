@@ -1,3 +1,4 @@
+# [Workout-Wednesday](https://new.uschess.org/news)
 ### March 20, 2024 2for6 in 40 minutes
 1. MISS, read as white to move
 2. MISS moved re1, should be qe1, winning the rook rc8
