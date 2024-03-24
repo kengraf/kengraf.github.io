@@ -1,3 +1,4 @@
+[thechessworld.com training](https://thechessworld.com/category/training-techniques/)
 In this article, we will explore the logical and systematic steps that can lead you to accomplish the coveted 1800 rating in chess.
 
 Table of contents
