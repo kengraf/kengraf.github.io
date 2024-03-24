@@ -4,17 +4,18 @@ In this article, we will explore the logical and systematic steps that can lead 
 Table of contents
 
 1. Opening Study
-Choosing an Opening
-Is Memorization important to get to 1800?
-2. Mastering Middlegame Elements
-3. Endgame Study
-4. Blindfold Chess
-5. Combinations
-6. Improving Calculation Ability
-7. Game Analysis
-8. Good Moves Are Enough
-9. Psychological Elements
-10. Learn from Great Players
+  - Choosing an Opening
+  - Memorization?
+  - [chesspersonality](https://www.chesspersonality.com/)
+3. Mastering Middlegame Elements
+4. Endgame Study
+5. Blindfold Chess
+6. Combinations
+7. Improving Calculation Ability
+8. Game Analysis
+9. Good Moves Are Enough
+10. Psychological Elements
+11. Learn from Great Players
 FAQ
 1. Opening Study
 To reach 1800 Elo and go beyond you will need a have an opening repertoire. The openings played are not always necessary to fit the player’s style. What’s important is that the openings should be known very well.
