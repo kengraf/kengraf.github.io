@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Gary Graf Gallery</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<!-- galary.css start -->
+<style>
+.collapsible {
+	background-color: #777;
+	color: white;
+	cursor: pointer;
+	padding: 10px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 20px;
+}
+
+.active, .collapsible:hover {
+	background-color: #555;
+}
+
+.collapsible:after {
+	content: '\002B';
+	color: white;
+	font-weight: bold;
+	float: right;
+	margin-left: 5px;
+}
+
+.active:after {
+	content: "\2212";
+}
+
+.content {
+	padding: 0 10px;
+	display: none;
+	overflow: hidden;
+	background-color: #f1f1f1;
+}
+</style>
+
+</head>
+	
+	<body class="is-preload-0 is-preload-1 is-preload-2">
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Gary Graf</h1>
+						<p>Gallery of family, <br/>friends, and sport</p>
+					</header>
+
+				<!-- Thumbnail (filled in by script) -->
+				<button type="button" class="collapsible">Golf tournament</button>
+<div class="content">
+					<section id="thumbnails">
+						<article>
+							<a class="thumbnail" href="images/gary.jpg"><img src="images/gary.jpg" alt="" /></a>
+						</article>
+				</section>
+</div>
+		
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+
+<!-- gallery.js start -->
+	<script>
+	
+	const images = [
+		];
+	
+	// Function to insert images with captions into the HTML
+	function insertImagesWithCaptions(imageArray) {
+			const container = document.getElementById('thumbnails');
+	
+			imageArray.forEach(image => {
+					const imageContainer = document.createElement('article');
+	
+					const img = document.createElement('a');
+					img.classList.add('thumbnail');
+					img.href = "images/"+image.name+".jpg";
+					img.alt = image.caption; // Use caption as alt text
+
+					img.innerHTML = '<img src="images/'+image.name+'.jpg" alt>';
+	
+					const title = document.createElement('h2');
+					title.textContent = image.title; // Set title text 
+					
+					const caption = document.createElement('p');
+					caption.textContent = image.caption; // Set caption text
+	
+					imageContainer.appendChild(img);
+					imageContainer.appendChild(title);
+					imageContainer.appendChild(caption);
+					container.appendChild(imageContainer);
+			});
+			
+	}
+	
+		</script>
+		
+<script>
+imageArray = {};
+const imageGroups = new Set();
+
+function create_collapsible(title, name) {
+			// Add collapseible
+			const newButton = document.createElement('button');
+			newButton.type = "button";
+			newButton.className = "collapsible";
+			newButton.innerHTML = title;
+			const newDiv = document.createElement("div");
+			newDiv.id = "gallery-"+name;
+			newDiv.className = "content";
+			newDiv.style.display = "none";
+			newDiv.innerHTML = '<section id="thumbnails"></section>';
+			document.getElementById('main').appendChild(newButton);
+			document.getElementById('main').appendChild(newDiv);
+}
+
+function add_image_to_gallery(name, item) {
+			const imageContainer = document.createElement('article');
+			const newLink = document.createElement('a');
+			newLink.classList.add('thumbnail');
+			newLink.href = 'images/'+ item.name + '.jpg';
+			const newImg = document.createElement('img');
+			newImg.src = 'images/'+ item.name + '.jpg';
+			newLink.appendChild(newImg);
+			imageContainer.appendChild(newLink);
+			$("#gallery-" + name + " section").append(imageContainer);
+}
+			
+// Fetch data from the JSON URL
+async function fetch_gallery(url) {
+		try {
+				const response = await fetch(url);
+				
+				// Check if the request was successful
+				if (!response.ok) {
+						throw new Error(`HTTP error! Status: ${response.status}`);
+				}
+				
+				// Parse the JSON from the response
+				imageArray = await response.json();
+				
+			// Determine the number of collapsible groups
+			imageArray.forEach(item => {
+				title = item.gallery;
+				let galleryName = title.split(" ")[0].toLowerCase();
+				if (!imageGroups.has(galleryName) ) {
+					imageGroups.add(galleryName);
+					create_collapsible(title, galleryName);
+				}
+				add_image_to_gallery(galleryName, item)
+			});
+			console.log(imageGroups);
+			
+		} catch (error) {
+				console.error('Error fetching JSON:', error);
+		}
+}
+</script>  <!-- end gallary.js -->
+
+<script>
+// Another async function that waits for fetchData to finish
+async function processData(url) {
+		const data = await fetch_gallery(url); // Waits for fetchData to finish
+
+		var coll = document.getElementsByClassName("collapsible");
+		var i;
+		
+		for (i = 0; i < coll.length; i++) {
+			coll[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				var content = this.nextElementSibling;
+				if (content.style.display === "block") {
+					content.style.display = "none";
+				} else {
+					content.style.display = "block";
+				}
+			});
+			}
+}
+
+	processData("images.json");
+//old?	insertImagesWithCaptions(imageArray);
+
+
+</script>
+
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
