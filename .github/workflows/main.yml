@@ -18,5 +18,5 @@ jobs:
         aws-region: us-east-2
     
     - name: Sync to S3
-      run: aws s3 sync . s3://your-bucket-name # Change this to your bucket namename: Upload Website
+      run: aws s3 sync . s3://kengraf.com # Change this to your bucket namename: Upload Website
 
