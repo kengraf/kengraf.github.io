@@ -11,7 +11,8 @@ The bucket is fronted by a AWS CloudFront distribution (https://d1r0kizfj5s76j.c
 which is pointed to by (https://kengraf.com) with a Route53 DNS alias.   
 
 Easy, Peasy, no server.  Or better yet no $$.
-
+work to do
+github workflow to s3
 
 | Item              | Group | pic | blurb |
 | :---------------- | :------: | ----: | :--- |
