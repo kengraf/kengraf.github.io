@@ -8,7 +8,7 @@ When I hit a stable point (need to pause work for: sleep, golf, bills mafia) the
 A Github workflow pushes the repo update to AWS S3.  
 The S3 bucket not internet accessible.  
 The bucket is fronted by a AWS CloudFront distribution (https://d1r0kizfj5s76j.cloudfront.net)  
-which is pointed to by (https://kengraf.com)  
+which is pointed to by (https://kengraf.com) with a Route53 DNS alias.   
 
 Easy, Peasy, no server.  Or better yet no $$.
 
