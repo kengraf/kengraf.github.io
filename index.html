@@ -39,7 +39,7 @@
 		<script>
 				// Redirect to main page after 3 seconds
 				setTimeout(function() {
-						window.location.href = "main.html"; // Set the path to your main page here
+						window.location.href = "people.html";
 				}, 5000); // Time in milliseconds
 		</script>
 		
@@ -74,13 +74,57 @@ const quotes = [
 	'Your smile is infectious',
 	'Be kind to someone today',
 	'Being kind is contagious',
+];
 
+const images = [
+	'1076814.jpg',
+	'1077779.jpg',
+	'1085326.jpg',
+	'1193554.jpg',
+	'15-MT-sunrise-start.jpg',
+	'572921.jpg',
+	'573242.jpg',
+	'573243.jpg',
+	'573388.jpg',
+	'573389.jpg',
+	'573390.jpg',
+	'573658.jpg',
+	'575881.jpg',
+	'576885.jpg',
+	'581901.jpg',
+	'601159.jpg',
+	'672031.jpg',
+	'688375.jpg',
+	'688689.jpg',
+	'706115.jpg',
+	'706438.jpg',
+	'707046.jpg',
+	'711560.jpg',
+	'793377.jpg',
+	'803584.jpg',
+	'848546.jpg',
+	'853722.jpg',
+	'855313.jpg',
+	'999300.jpg',
+	'aoraki-mt-cook.jpg',
+	'arthur-valley-milford-track.jpg',
+	'good-shepard-church.jpg',
+	'lake-tekapo.jpeg',
+	'Night Skies over Red Tarns.jpg',
+	'pxfuel.jpg',
+	'Southland-Mountains.jpg',
+	'wp12568454.jpg',
+	'wp12568589.jpg',
+	'wp12568678.jpg',
+	'wp12926157.jpg',
+	'wp12926176.jpg',
+	'wp6571296.jpg',
 ];
 
 function displayQuote() {
 	let quoteImage;
 
-		quoteImage = "images/wall01.jpg";
+		quoteImage = "wallpaper/" + images[Math.floor(Math.random() * images.length)];
 
 	// Update background image
 	document.body.style.background = quoteImage ? `url(${quoteImage}) center / cover` : '#f43';

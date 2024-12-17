@@ -19,12 +19,10 @@ github workflow to s3
 | people  |  travel    |   | scotland, nz, ireland,etc gallery |
 | people  | family     |   | gallery  |
 | people  | gary-pics     |   | gallery  |
-| hobby  |  golf    |   | top #  |
+| people  | gary-schalorship    |   | page  |
 | hobby  | recipes     |   | site  |
 | hobby  | chess     |   | journey puzzles  |
 | hobby  | cyber puzzles     |   | random page  |
-| history |  unh-cyber  |   | site  |
-| history |  securityxing    |   | site  |
 | tech  |  pi    |   | site  |
 | tech  |  nadialin    |   | site  |
 | tech  |  it666    |   | site  |
