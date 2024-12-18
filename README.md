@@ -24,7 +24,7 @@ github workflow to s3
 | hobby  | chess     |   | journey puzzles  |
 | hobby  | cyber puzzles     |   | random page  |
 | tech  |  pi    |   | site  |
-| tech  |  nadialin    |   | site  |
+| tech  |  wlowi    |   | site  |
 | tech  |  it666    |   | site  |
 | tech  | it718     |   | site  |
 | tech  | github     |   | site  |
